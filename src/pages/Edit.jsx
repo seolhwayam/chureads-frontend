@@ -3,6 +3,7 @@ import PostInput from "../components/PostInput";
 import { useEffect, useState } from "react";
 import { initialFeedList } from "../data/response";
 
+//수정하는 페이지
 const Edit = () => {
   // logic
   const { id } = useParams();
