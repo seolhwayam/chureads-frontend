@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
@@ -19,6 +19,16 @@ const [password, setPassword] = useState("");
 // 로딩 상태
 const [isLoading, setIsLoading] = useState(false);
 const [errorMessage, setErrorMessage] = useState("");
+
+const currentUser = auth.currentUser;
+console.log("🚀 ~ Home ~ currentUser:", currentUser)
+
+const isLoggedIn = !!currentUser;
+
+useEffect(() => {
+    isLoggedIn && history('/');
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
 const handleInputChange = (inputValue, field) => {
   if (field === "email") {
