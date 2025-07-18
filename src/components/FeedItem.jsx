@@ -54,24 +54,27 @@ const FeedItem = ({ data, tags, isAuthor, currentUserId, onEdit, onDelete, onLik
           {/* START: 좋아요 영역 */}
           <div className="flex items-center gap-1">
             <button type="button" className="text-churead-gray-400" onClick={() => onLike(_id)}>
+              {/* {data.likedUsers.includes(currentUserId) ? <RiHeartFill color="red" /> : <RiHeartLine />} */}
               {false ? <RiHeartFill color="red" /> : <RiHeartLine />}
             </button>
             <span>{likeCount}</span>
           </div>
           {/* END: 좋아요 영역 */}
           {/* START: 태그 영역 */}
-          <div className="mt-2">
-            <div className="flex flex-wrap gap-2">
-              {tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm text-gray-400 cursor-pointer hover:text-gray-300"
-                >
-                  #{tag}
-                </span>
-              ))}
+          {Array.isArray(tags) && tags.length > 0 && (
+            <div className="mt-2">
+              <div className="flex flex-wrap gap-2">
+                {tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="text-sm text-gray-400 cursor-pointer hover:text-gray-300"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* END: 태그 영역 */}
         </div>
         {/* END: 콘텐츠 영역 */}
