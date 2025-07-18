@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 /*
 사용자의 이름을 입력받아서 인사 문구와 함께 메세지를 보여주는 컴포넌트
 */
