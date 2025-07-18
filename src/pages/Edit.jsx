@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import PostInput from "../components/PostInput";
 import { useEffect, useState } from "react";
-import { initialFeedList } from "../data/response";
 const API_BASE_URL = "http://localhost:8080";
 const Edit = () => {
   // logic

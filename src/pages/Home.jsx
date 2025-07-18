@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/layout/Header";
 import Nav from "../components/layout/Nav";
 import FeedItem from "../components/FeedItem";
-import { initialFeedList} from "../data/response";
+
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import useSSE from "../hooks/useSSE";
@@ -16,7 +16,7 @@ const Home = () => {
   console.log("🚀 ~ Home ~ currentUser:", currentUser)
   const isLoggedIn = !!currentUser
 
-  const [feedList, setFeedList] = useState(initialFeedList);
+  const [feedList, setFeedList] = useState([]);
 
   //SSE 연결
   const { isConnected } = useSSE()
